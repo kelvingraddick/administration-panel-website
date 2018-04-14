@@ -1,0 +1,2 @@
+<link href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css' rel='stylesheet' type='text/css'>
+<link href='http://<?php echo $_SERVER['SERVER_NAME']; ?>/admin/css/main.css' rel='stylesheet' type='text/css'>
