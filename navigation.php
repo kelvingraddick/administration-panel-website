@@ -29,7 +29,7 @@
             Content
         </p>
         <ul class="menu-list">
-            <!--<li><a id="link_blog_posts" onclick="onNavigationClick('blog_posts', this);">Blog Posts</a></li>-->
+            <li><a id="link_blog_posts" onclick="onNavigationClick('blog_posts', this);">Blog Posts</a></li>
             <li><a id="link_events" onclick="onNavigationClick('events', this);">Events</a></li>
             <li><a id="link_photo_albums" onclick="onNavigationClick('photo_albums', this);">Photo Albums</a></li>
         </ul>
