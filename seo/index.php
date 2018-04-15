@@ -18,8 +18,6 @@
     add_table_template_field($template['fields'], 'Display', 'display');
     add_table_template_field($template['fields'], 'Title', 'title');
     add_table_template_field($template['fields'], 'Description', 'description');
-	add_table_template_field($template['fields'], 'Keywords', 'keywords');
-	add_table_template_field($template['fields'], 'Header', 'header');
 
     echo create_table($template);
 ?>
