@@ -3,20 +3,20 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/admin/js/main.js"></script>
+<script src="<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/js/main.js"></script>
 <script>
     $(document).ready(function() {
         var currentPageLinkIdCookie = getCookie("current_page_link_id");
         if (currentPageLinkIdCookie) {
             $("#" + currentPageLinkIdCookie)[0].onclick();
-        } else {
+        } else if ($("#link_admins")[0]) {
             $("#link_admins")[0].onclick();
         }
     });
 
     function onNavigationClick(page_path, element) {
         $("#page").html('<div class="loading">Loading...</div>');
-        $("#page").load('http://<?php echo $_SERVER['SERVER_NAME'].'/admin/'; ?>' + page_path);
+        $("#page").load('<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].'/admin/'; ?>' + page_path);
         if (element) {
             $("a").removeClass("is-active");
             $(element).addClass('is-active');
@@ -88,7 +88,7 @@
         if (form.valid()) {
             $(button).addClass('is-loading');
             $.ajax({
-                url: "http://<?php echo $_SERVER['SERVER_NAME']; ?>/admin/utility/upload.php",
+                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/utility/upload.php",
                 type: "POST",
                 data: new FormData(form[0]),
                 async: false,
@@ -122,11 +122,13 @@
     }
 
     var imageUploadFile = document.getElementById("image_upload_file");
-    imageUploadFile.onchange = function() {
-        if (imageUploadFile.files.length > 0) {
-            document.getElementById("image_upload_name").innerHTML = imageUploadFile.files[0].name;
-        }
-    };
+    if (imageUploadFile) {
+        imageUploadFile.onchange = function() {
+            if (imageUploadFile.files.length > 0) {
+                document.getElementById("image_upload_name").innerHTML = imageUploadFile.files[0].name;
+            }
+        };
+    }
 
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -151,7 +153,7 @@
         return undefined;
     }
 
-    particlesJS.load('particles', 'http://<?php echo $_SERVER['SERVER_NAME']; ?>/admin/js/particles.configuration.json', function() {
+    particlesJS.load('particles', '<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/js/particles.configuration.json', function() {
         //console.log('callback - particles.js config loaded');
     });
 </script>

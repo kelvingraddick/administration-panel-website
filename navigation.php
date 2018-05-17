@@ -1,5 +1,5 @@
 <?php
-	$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+	$url = $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 ?>
 <div class="navigation card">
     <a href="http://www.wavelinkllc.com"><img style="height:75px;" src="http://www.wavelinkllc.com/images/WaveLink_Logo.png" alt="Wave Link, LLC - High-Quality Mobile Apps, Websites, & Graphics" /></a>
