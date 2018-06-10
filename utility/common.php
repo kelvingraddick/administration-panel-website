@@ -8,7 +8,8 @@
 		"NUMBER" => 3,
 		"SELECT" => 4,
 		"CHECKBOX" => 5,
-		"IMAGE" => 6
+		"IMAGE" => 6,
+		"FILE" => 7
 	);
 
 	$USER_TYPES = array(
@@ -63,6 +64,12 @@
 			}
 		}
 		return $url;
+	}
+
+	function is_date($string) {
+		if (!$string) { return false; }
+		try { new \DateTime($string); return true; } 
+		catch (\Exception $error) { return false; }
 	}
 
 	function _file_extension($str) {

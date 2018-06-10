@@ -107,6 +107,8 @@
                             $html .= create_textarea($field); break;
                         case $FIELD_TYPES['IMAGE']: 
                             $html .= create_image_upload($field); break;
+                        case $FIELD_TYPES['FILE']: 
+                            $html .= create_file_upload($field); break;
                         default:
                             break;
                     }
@@ -186,6 +188,21 @@
                     </figure>
                 </div>
             </div>
+        </div>';
+    }
+
+    function create_file_upload($field) {
+        return '
+        <div class="column is-half">
+            <div class="field">
+                <label class="label">'.$field['display_name'].'</label>
+                <div class="control">
+                    <input class="input" type="input" placeholder="'.$field['display_name'].'" name="'.$field['control_name'].'" value="'.$field['value'].'" '.($field['required'] ? "required" : "").'>
+                </div>
+            </div>
+            <p class="control">
+                <button class="button is-primary" onclick="onFileUploadOpenClick(this); return false;">Upload File</button>
+            </p>
         </div>';
     }
 ?>

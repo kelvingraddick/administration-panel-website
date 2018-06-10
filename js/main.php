@@ -130,6 +130,64 @@
         };
     }
 
+    var currentFileUploadField;
+    var currentFileUploadFile;
+
+    function onFileUploadOpenClick(button) {
+        var container = $(button).closest('div');
+        currentFileUploadField = container.find('input');
+        currentFileUploadFile = container.find('img');
+        $("#file_upload_modal").show();
+    }
+
+    function onFileUploadSaveClick(button) {
+        var form = $(button).closest('form');
+        form.validate();
+        if (form.valid()) {
+            $(button).addClass('is-loading');
+            $.ajax({
+                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/utility/upload.php",
+                type: "POST",
+                data: new FormData(form[0]),
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+            .done(function(data) {
+                var response = JSON.parse(data);
+                if (response.success) {
+                    currentFileUploadField.val(response.url);
+                    currentFileUploadFile.attr("src", response.url);
+                    onFileUploadCloseClick();
+                    alert("Save was successful.");
+                } else {
+                    alert(response.error_message);
+                }
+            })
+            .fail(function() {
+                alert("There was a problem. Please try again.");
+            })
+            .always(function() {
+                $(button).removeClass('is-loading');
+            });
+        }
+        return false;
+    }
+
+    function onFileUploadCloseClick() {
+        $("#file_upload_modal").hide();
+    }
+
+    var fileUploadFile = document.getElementById("file_upload_file");
+    if (fileUploadFile) {
+        fileUploadFile.onchange = function() {
+            if (fileUploadFile.files.length > 0) {
+                document.getElementById("file_upload_name").innerHTML = fileUploadFile.files[0].name;
+            }
+        };
+    }
+
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));

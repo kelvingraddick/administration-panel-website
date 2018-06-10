@@ -1,5 +1,5 @@
 <?php
-    //ini_set('display_errors',1);
+	//ini_set('display_errors',1);
 	//ini_set('display_startup_errors',1);
 	//error_reporting(-1);
 	include $_SERVER['DOCUMENT_ROOT'].'/admin/authentication.php';
@@ -8,17 +8,15 @@
 
     $database_connection = connect_to_database();
 
-    $name = preg_replace('/\s+/', ' ', addslashes($_POST['name']));
-    $directory = preg_replace('/\s+/', ' ', addslashes($_POST['directory']));
+    $id = $_POST['id'];
 
     $response = array();
-    $response['url'] = upload_file($name, $directory, 2);
 
-	if ($response['url'] <> "") {
+	if (mysqli_query($database_connection, "DELETE FROM newsletters WHERE id = '$id'")) {
 		$response['success'] = true;
 	} else {
-        $response['success'] = false;
-        $response['error_message'] = "There was an error uploading. Please try again.";
+		$response['success'] = false;
+        $response['error_message'] = "There was an error saving: ".mysqli_error($database_connection);
     }
     
     echo json_encode($response);
