@@ -64,6 +64,5 @@ html, body {
         position: absolute;
         top: 20px; left: 290px; right: 20px;
         margin: auto;
-        overflow-x: hidden;
     }
 }
