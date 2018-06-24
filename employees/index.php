@@ -11,10 +11,10 @@
     $template['page_name'] = "Employees";
     $template['page_path'] = "employees";
     $template['database_connection'] = connect_to_database();
-    $template['database_table'] = "employees";
+    $template['database_table'] = "(SELECT * FROM employees ORDER BY order_index ASC) AS employees";
     $template['search'] = $_GET['search'];
     $template['fields'] = array();
-    add_table_template_field($template['fields'], 'Id', 'id');
+    add_table_template_field($template['fields'], 'Order', 'order_index');
     add_table_template_field($template['fields'], 'First Name', 'first_name');
     add_table_template_field($template['fields'], 'Last Name', 'last_name');
     add_table_template_field($template['fields'], 'Email Address', 'email_address');

@@ -22,6 +22,7 @@
     add_form_template_field($template['fields'], 'Email Address', 'email_address', $FIELD_TYPES['TEXT'], true);
     add_form_template_field($template['fields'], 'Phone Number', 'phone_number', $FIELD_TYPES['TEXT'], false);
     add_form_template_field($template['fields'], 'Description', 'description', $FIELD_TYPES['TEXTAREA'], false);
+    add_form_template_field($template['fields'], 'Order', 'order_index', $FIELD_TYPES['NUMBER'], true);
 
     echo create_form($template);
 ?>
