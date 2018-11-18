@@ -32,6 +32,7 @@
             <li><a id="link_blog_posts" onclick="onNavigationClick('blog_posts', this);">Blog Posts</a></li>
             <li><a id="link_events" onclick="onNavigationClick('events', this);">Events</a></li>
             <li><a id="link_photo_albums" onclick="onNavigationClick('photo_albums', this);">Photo Albums</a></li>
+            <!--<li><a id="link_products" onclick="onNavigationClick('products', this);">Products</a></li>-->
             <!--<li><a id="link_newsletters" onclick="onNavigationClick('newsletters', this);">Newsletters</a></li>-->
             <!--<li><a id="link_employees" onclick="onNavigationClick('employees', this);">Employees</a></li>-->
         </ul>
