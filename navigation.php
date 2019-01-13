@@ -12,7 +12,7 @@
             <li><a id="link_admins" onclick="onNavigationClick('admins', this);">Admins</a></li>
             <li><a id="link_settings" onclick="onNavigationClick('settings', this);">Settings</a></li>
             <li><a id="link_seo" onclick="onNavigationClick('seo', this);">SEO</a></li>
-            <li><a href="/admin/logout.php" style="color:#e74c3c;">Logout</a></li>
+            <li><a href="/setupshopz/admin/logout.php" style="color:#e74c3c;">Logout</a></li>
         </ul>
         <p class="menu-label">
             User Data

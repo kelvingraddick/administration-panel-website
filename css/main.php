@@ -1,2 +1,2 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css' rel='stylesheet' type='text/css'>
-<link href='<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/css/main.css' rel='stylesheet' type='text/css'>
+<link href='<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/setupshopz/admin/css/main.css' rel='stylesheet' type='text/css'>

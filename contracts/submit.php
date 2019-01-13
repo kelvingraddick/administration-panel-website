@@ -1,7 +1,7 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/authentication.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/authentication.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/functions.php';
 	$c = connect_to_database();
 	$id = $_POST['id'];
 	$user_id = $_POST['user_id'];

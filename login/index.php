@@ -1,6 +1,6 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/common.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/common.php';
 	$database_connection = connect_to_database();
 
     $session = $_COOKIE['email_address'].$_SERVER["REMOTE_ADDR"];
@@ -19,7 +19,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $site_name ?> - Administration Panel</title>
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/css/main.php'; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/css/main.php'; ?>
 	</head>
 	<body class="full_height">
 		<div id="particles" class="background"></div>
@@ -59,6 +59,6 @@
 				</div>
 			</div>
 		</div>
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/js/main.php'; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/js/main.php'; ?>
 	</body>
 </html>

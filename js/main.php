@@ -3,7 +3,7 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/js/main.js"></script>
+<script src="<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/setupshopz/admin/js/main.js"></script>
 <script>
     $(document).ready(function() {
         var currentPageLinkIdCookie = getCookie("current_page_link_id");
@@ -16,7 +16,7 @@
 
     function onNavigationClick(page_path, element) {
         $("#page").html('<div class="loading">Loading...</div>');
-        $("#page").load('<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].'/admin/'; ?>' + page_path);
+        $("#page").load('<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].'/setupshopz/admin/'; ?>' + page_path);
         if (element) {
             $("a").removeClass("is-active");
             $(element).addClass('is-active');
@@ -88,7 +88,7 @@
         if (form.valid()) {
             $(button).addClass('is-loading');
             $.ajax({
-                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/utility/upload.php",
+                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/setupshopz/admin/utility/upload.php",
                 type: "POST",
                 data: new FormData(form[0]),
                 async: false,
@@ -146,7 +146,7 @@
         if (form.valid()) {
             $(button).addClass('is-loading');
             $.ajax({
-                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/utility/upload.php",
+                url: "<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/setupshopz/admin/utility/upload.php",
                 type: "POST",
                 data: new FormData(form[0]),
                 async: false,
@@ -211,7 +211,7 @@
         return undefined;
     }
 
-    particlesJS.load('particles', '<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/admin/js/particles.configuration.json', function() {
+    particlesJS.load('particles', '<?php echo $_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']; ?>/setupshopz/admin/js/particles.configuration.json', function() {
         //console.log('callback - particles.js config loaded');
     });
 </script>

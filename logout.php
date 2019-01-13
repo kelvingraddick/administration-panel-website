@@ -1,6 +1,6 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/common.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/common.php';
 	$database_connection = connect_to_database();
 
 	session_start();
@@ -18,7 +18,7 @@
 <html>
 	<head>
 		<title>Wave Link, LLC - Logout Successful</title>
-		<?php echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].'/admin/">'; ?>
+		<?php echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME'].'/setupshopz/admin/">'; ?>
 	</head>
 	<body align="center">
 		Logout Successful <br/>

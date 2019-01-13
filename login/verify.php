@@ -1,6 +1,6 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/common.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/setupshopz/admin/utility/common.php';
 	$database_connection = connect_to_database();
 
 	$email_address = $_POST['email_address'];
@@ -20,7 +20,7 @@
 		session_start();
 		$_SESSION["email_address"] = $email_address;
 		$_SESSION["password"] = $password;
-		header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/admin/");
+		header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/setupshopz/admin/");
 	} else {
 		$sql = "SELECT * FROM users WHERE email_address = '$email_address' and password = '$password'";
 		$result = mysqli_query($database_connection, $sql);
@@ -31,9 +31,9 @@
 			$_SESSION["password"] = $session_password;
 			setcookie("email_address", $session_email_address, time()+3600*24*1, "/"); //expire in 24 hours or 1 day
 			if (mysqli_query($database_connection, "UPDATE `users` SET session='$session' WHERE email_address = '$email_address' and password = '$password'")) { } else { }
-			header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/admin/");
+			header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/setupshopz/admin/");
 		} else {
-			header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/admin/login/?error=yes&email_address=".$session_email_address."&password=".$session_password."");
+			header("Location: ".$_ENV["PROTOCOL"].$_SERVER['SERVER_NAME']."/setupshopz/admin/login/?error=yes&email_address=".$session_email_address."&password=".$session_password."");
 		}
 	}
 ?>
