@@ -8,7 +8,7 @@
 	setcookie("current_page_link_id", "", time()-3600*6, "/");
 	$email_address = $_SESSION['email_address'];
 
-	if (mysqli_query($database_connection, "UPDATE `users` SET session = 'none' WHERE email_address = '$email_address'")) {
+	if (mysqli_query($database_connection, "UPDATE `admins` SET session = 'none' WHERE email_address = '$email_address'")) {
 		// success
 	} else {
 		// failure

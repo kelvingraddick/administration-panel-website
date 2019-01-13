@@ -9,24 +9,24 @@
     $database_connection = connect_to_database();
 
     $id = $_POST['id'];
-    $type = $_POST['type'];
 	$first_name = addslashes($_POST['first_name']);
 	$last_name = addslashes($_POST['last_name']);
 	$email_address = addslashes($_POST['email_address']);
-    $phone_number = addslashes($_POST['phone_number']);
-	$notes = addslashes($_POST['notes']);
+	$phone_number = addslashes($_POST['phone_number']);
+	$password = addslashes($_POST['password']);
+	$description = addslashes($_POST['description']);
 
     $response = array();
 
 	if ($id == "") {
-		if (mysqli_query($database_connection, "INSERT INTO users (type, first_name, last_name, email_address, phone_number, password, notes) values(0, '$first_name', '$last_name', '$email_address', '$phone_number', 'wavelink', '$notes')")) {
+		if (mysqli_query($database_connection, "INSERT INTO admins (first_name, last_name, email_address, phone_number, password, description) values('$first_name', '$last_name', '$email_address', '$phone_number', '$password', '$description')")) {
 			$response['success'] = true;
 		} else {
             $response['success'] = false;
             $response['error_message'] = "There was an error saving: ".mysqli_error($database_connection);
 		}
 	} else {
-		if (mysqli_query($database_connection, "UPDATE users SET type = '$type', first_name = '$first_name', last_name = '$last_name', email_address = '$email_address', phone_number = '$phone_number', password = 'wavelink', notes = '$notes' where id = '$id'")){ 
+		if (mysqli_query($database_connection, "UPDATE admins SET first_name = '$first_name', last_name = '$last_name', email_address = '$email_address', phone_number = '$phone_number', password = '$password', description = '$description' where id = '$id'")){ 
 			$response['success'] = true;
 		} else {
             $response['success'] = false;

@@ -4,7 +4,7 @@
 	$database_connection = connect_to_database();
 
     $session = $_COOKIE['email_address'].$_SERVER["REMOTE_ADDR"];
-	if (mysqli_num_rows(mysqli_query($database_connection, "SELECT * FROM `users` WHERE session = '$session'"))) {
+	if (mysqli_num_rows(mysqli_query($database_connection, "SELECT * FROM `admins` WHERE session = '$session'"))) {
         header("location:verify.php");
         echo $session;
 	}

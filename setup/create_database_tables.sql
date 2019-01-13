@@ -132,3 +132,19 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `type`, `first_name`, `last_name`, `email_address`, `phone_number`, `password`, `notes`, `created_time`, `updated_time`, `session`) VALUES
 (1, 0, 'Kelvin', 'Graddick', 'kelvingraddick@gmail.com', '7067736354', 'wavelink', '', '2018-03-18 15:00:11', NULL, 'none')
+
+CREATE TABLE `admins` (
+  `id` bigint(30) NOT NULL,
+  `first_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(10000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `session` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email_address`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `admins` (`id`, `first_name`, `last_name`, `email_address`, `phone_number`, `password`, `description`, `session`) VALUES
+(1, 'Kelvin', 'Graddick', 'kelvingraddick@gmail.com', '7067736354', 'wavelink', '', '24.99.0.145');
