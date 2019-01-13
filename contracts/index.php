@@ -54,7 +54,7 @@
 			<tbody>
 				<?php
 					$query = "SELECT c.id AS id, c.user_id AS user_id, code, c.description AS description, contract_url, signature_url, c.date_added AS date_added, date_signed, first_name, last_name, business_name, email, phone
-							  FROM `contracts` AS c INNER JOIN `users` AS u ON u.id = c.user_id";
+							  FROM `contracts` AS c INNER JOIN `admins` AS u ON u.id = c.user_id";
 					if($search <> "") {
 						$search = "%".$search."%";
 						$query = $query." WHERE
