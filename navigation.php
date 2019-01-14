@@ -18,23 +18,14 @@
             User Data
         </p>
         <ul class="menu-list">
-            <li><a id="link_members" onclick="onNavigationClick('members', this);">Members</a></li>
-            <li><a id="link_contacts" onclick="onNavigationClick('contacts', this);">Contacts</a></li>
-            <!--<li><a id="link_posts" nclick="onNavigationClick('posts', this);">Posts</a></li>-->
-            <!--<li><a id="link_orders" onclick="onNavigationClick('orders', this);">Orders</a></li>-->
-            <!--<li><a id="link_appointments" onclick="onNavigationClick('appointments', this);">Appointments</a></li>-->
-            <!--<li><a id="link_contracts" onclick="onNavigationClick('contracts', this);">Contracts</a></li>-->
+            <li><a id="link_users" onclick="onNavigationClick('users', this);">Users</a></li>
+            <li><a id="link_vendors" onclick="onNavigationClick('vendors', this);">Vendors</a></li>
         </ul>
         <p class="menu-label">
             Content
         </p>
         <ul class="menu-list">
-            <li><a id="link_blog_posts" onclick="onNavigationClick('blog_posts', this);">Blog Posts</a></li>
-            <li><a id="link_events" onclick="onNavigationClick('events', this);">Events</a></li>
-            <li><a id="link_photo_albums" onclick="onNavigationClick('photo_albums', this);">Photo Albums</a></li>
-            <!--<li><a id="link_products" onclick="onNavigationClick('products', this);">Products</a></li>-->
-            <!--<li><a id="link_newsletters" onclick="onNavigationClick('newsletters', this);">Newsletters</a></li>-->
-            <!--<li><a id="link_employees" onclick="onNavigationClick('employees', this);">Employees</a></li>-->
+        <li><a id="link_vendors" onclick="onNavigationClick('vendors/documents.php', this);">Vendor Documents</a></li>
         </ul>
     </aside>
 </div>
