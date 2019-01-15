@@ -17,13 +17,13 @@
     $template['record_id'] = $_GET['id'];
     $template['fields'] = array();
     add_form_template_field($template['fields'], 'Id', 'id', $FIELD_TYPES['HIDDEN'], false);
-    add_form_template_field($template['fields'], 'Type', 'type', $FIELD_TYPES['NUMBER'], true);
+    add_form_template_field($template['fields'], 'Type', 'type', $FIELD_TYPES['HIDDEN'], false);
     add_form_template_field($template['fields'], 'Title', 'title', $FIELD_TYPES['TEXT'], true);
-    add_form_template_field($template['fields'], 'Slug', 'slug', $FIELD_TYPES['TEXT'], true);
+    add_form_template_field($template['fields'], 'URL Slug (no spaces)', 'slug', $FIELD_TYPES['TEXT'], true);
     add_form_template_field($template['fields'], 'Description', 'description', $FIELD_TYPES['TEXTAREA'], true);
     add_form_template_field($template['fields'], 'Content', 'content', $FIELD_TYPES['TEXTAREA'], true);
     add_form_template_field($template['fields'], 'Author', 'author', $FIELD_TYPES['TEXT'], true);
-    add_form_template_field($template['fields'], 'Is Published?', 'is_published', $FIELD_TYPES['NUMBER'], true);
+    add_form_template_field($template['fields'], 'Is Published? (0 = no; 1 = yes)', 'is_published', $FIELD_TYPES['NUMBER'], true);
     add_form_template_field($template['fields'], 'Main Image URL', 'main_image_url', $FIELD_TYPES['IMAGE'], true);
     add_form_template_field($template['fields'], 'Tall Image URL', 'tall_image_url', $FIELD_TYPES['IMAGE'], false);
 

@@ -32,7 +32,10 @@
     add_form_template_field($template['fields'], 'Twitter Link', 'twitter_link', $FIELD_TYPES['TEXT'], false);
     add_form_template_field($template['fields'], 'Instagram Link', 'instagram_link', $FIELD_TYPES['TEXT'], false);
     add_form_template_field($template['fields'], 'LinkedIn Link', 'linkedin_link', $FIELD_TYPES['TEXT'], false);
-    add_form_template_field($template['fields'], 'About Us', 'about_us', $FIELD_TYPES['TEXTAREA'], true);
+    add_form_template_field($template['fields'], 'About Us (Who We Are)', 'about_us', $FIELD_TYPES['TEXTAREA'], true);
+    add_form_template_field($template['fields'], 'About Us (Mission)', 'about_us_2', $FIELD_TYPES['TEXTAREA'], true);
+    add_form_template_field($template['fields'], 'About Us (Vision)', 'about_us_3', $FIELD_TYPES['TEXTAREA'], true);
+    add_form_template_field($template['fields'], 'About Us (Our Values)', 'about_us_4', $FIELD_TYPES['TEXTAREA'], true);
 
     echo create_form($template);
 ?>

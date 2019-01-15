@@ -22,7 +22,7 @@
     $response = array();
 
 	if ($id == "") {
-		if (mysqli_query($database_connection, "INSERT INTO blog_posts (type, title, slug, description, content, author, is_published, main_image_url, tall_image_url) values('$type', '$title', '$slug', '$description', '$content', '$author', '$is_published', '$main_image_url', '$tall_image_url')")) {
+		if (mysqli_query($database_connection, "INSERT INTO blog_posts (type, title, slug, description, content, author, is_published, main_image_url, tall_image_url) values(0, '$title', '$slug', '$description', '$content', '$author', '$is_published', '$main_image_url', '$tall_image_url')")) {
 			$response['success'] = true;
 		} else {
             $response['success'] = false;

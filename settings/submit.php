@@ -26,6 +26,9 @@
 	$instagram_link = addslashes($_POST['instagram_link']);
 
 	$about_us = addslashes($_POST['about_us']);
+	$about_us_2 = addslashes($_POST['about_us_2']);
+	$about_us_3 = addslashes($_POST['about_us_3']);
+	$about_us_4 = addslashes($_POST['about_us_4']);
 
 	$response = array();
 
@@ -49,6 +52,9 @@
 			WHEN 'linkedin_link' THEN '$linkedin_link'
 			WHEN 'instagram_link' THEN '$instagram_link'
 			WHEN 'about_us' THEN '$about_us'
+			WHEN 'about_us_2' THEN '$about_us_2'
+			WHEN 'about_us_3' THEN '$about_us_3'
+			WHEN 'about_us_4' THEN '$about_us_4'
 		END
 		WHERE code IN
 		(
@@ -68,7 +74,10 @@
 			'twitter_link',
 			'linkedin_link',
 			'instagram_link',
-			'about_us'
+			'about_us',
+			'about_us_2',
+			'about_us_3',
+			'about_us_4'
 		)"
 	)) {
 		$response['success'] = true;
