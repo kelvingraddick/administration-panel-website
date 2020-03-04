@@ -6,5 +6,5 @@
 	$database_password = "password";
 	$database_name = "database";
 
-	$_ENV["PROTOCOL"] = "https://";
+	$_ENV["PROTOCOL"] = "http://";
 ?>
