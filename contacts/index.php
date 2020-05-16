@@ -11,7 +11,7 @@
     $template['page_name'] = "Contacts";
     $template['page_path'] = "contacts";
     $template['database_connection'] = connect_to_database();
-    $template['database_table'] = "contacts";
+    $template['database_table'] = "(SELECT * FROM contacts ORDER BY id DESC) AS contacts";
     $template['search'] = $_GET['search'];
     $template['fields'] = array();
     add_table_template_field($template['fields'], 'Id', 'id');
