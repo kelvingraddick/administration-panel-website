@@ -21,11 +21,13 @@
             <li><a id="link_users" onclick="onNavigationClick('users', this);">Users</a></li>
             <li><a id="link_vendors" onclick="onNavigationClick('vendors', this);">Vendors</a></li>
         </ul>
+        <!--
         <p class="menu-label">
             Content
         </p>
         <ul class="menu-list">
         <li><a id="link_vendors" onclick="onNavigationClick('vendors/documents.php', this);">Vendor Documents</a></li>
         </ul>
+        -->
     </aside>
 </div>
