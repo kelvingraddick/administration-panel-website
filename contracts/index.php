@@ -70,7 +70,7 @@
 							phone LIKE '$search'";
 					}
 					$result = mysqli_query($c, $query) or die(mysql_error());
-					while($u = mysqli_fetch_array( $result, MYSQL_ASSOC )) {
+					while($u = mysqli_fetch_array( $result, MYSQLI_ASSOC )) {
 						echo
 						"<tr>
 							<td><a href=\"".$u["contract_url"]."\" target=\"_blank\">".$u["id"]."</a></td>
