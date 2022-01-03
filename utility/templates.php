@@ -56,7 +56,7 @@
                     }
                     $query .= " ".implode(" OR ", $where_clause);
                 }
-                $result = mysqli_query($template['database_connection'], $query) or die(mysql_error());
+                $result = mysqli_query($template['database_connection'], $query) or die(mysqli_error());
                 while ($record = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $html .=
                     "<tr>";

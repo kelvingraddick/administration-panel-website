@@ -69,7 +69,7 @@
 							email LIKE '$search' OR
 							phone LIKE '$search'";
 					}
-					$result = mysqli_query($c, $query) or die(mysql_error());
+					$result = mysqli_query($c, $query) or die(mysqli_error());
 					while($u = mysqli_fetch_array( $result, MYSQLI_ASSOC )) {
 						echo
 						"<tr>
