@@ -91,7 +91,7 @@
                 if ($template['record'] <> NULL) {
                     $record = $template['record'];
                 } else {
-                    $result = mysqli_query($template['database_connection'], "SELECT * FROM ".$template['database_table']." WHERE id = ".$template['record_id']);
+                    $result = mysqli_query($template['database_connection'], "SELECT * FROM ".$template['database_table']." WHERE id = ".(isset($template['record_id']) ? $template['record_id'] : 0));
                     $record = mysqli_fetch_assoc($result);
                 }
                 foreach ($template['fields'] as $field) {
