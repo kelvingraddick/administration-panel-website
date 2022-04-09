@@ -1,6 +1,6 @@
 <?php
-    function add_table_template_field(&$fields, $display_name, $control_name) {
-		array_push($fields, array('display_name' => $display_name, 'control_name' => $control_name));
+    function add_table_template_field(&$fields, $display_name, $control_name, $is_boolean = false) {
+		array_push($fields, array('display_name' => $display_name, 'control_name' => $control_name, 'is_boolean' => $is_boolean));
 	}
 
 	function add_form_template_field(&$fields, $display_name, $control_name, $type, $required) {
@@ -61,7 +61,8 @@
                     $html .=
                     "<tr>";
                     foreach ($template['fields'] as $field) {
-                        $html .= "<td>".$record[$field['control_name']]."</td>";
+                        $field_value = $record[$field['control_name']];
+                        $html .= "<td>".($field['is_boolean'] ? json_encode(boolval($field_value)) : $field_value)."</td>";
                     }
                     $html .= "
                         <td style=\"text-align:center;\">

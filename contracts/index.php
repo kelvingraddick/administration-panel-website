@@ -53,8 +53,8 @@
 			</thead>
 			<tbody>
 				<?php
-					$query = "SELECT c.id AS id, c.user_id AS user_id, code, c.description AS description, contract_url, signature_url, c.date_added AS date_added, date_signed, first_name, last_name, business_name, email, phone
-							  FROM `contracts` AS c INNER JOIN `users` AS u ON u.id = c.user_id";
+					$query = "SELECT c.id AS id, c.admin_id AS admin_id, code, c.description AS description, contract_url, signature_url, c.date_added AS date_added, date_signed, first_name, last_name, business_name, email, phone
+							  FROM `contracts` AS c INNER JOIN `admins` AS u ON u.id = c.admin_id";
 					if($search <> "") {
 						$search = "%".$search."%";
 						$query = $query." WHERE
@@ -62,7 +62,7 @@
 							c.description LIKE '$search' OR
 							contract_url LIKE '$search' OR
 							c.id LIKE '$search' OR
-							user_id LIKE '$search' OR
+							admin_id LIKE '$search' OR
 							first_name LIKE '$search' OR
 							last_name LIKE '$search' OR
 							business_name LIKE '$search' OR

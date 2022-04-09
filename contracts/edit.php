@@ -4,7 +4,7 @@
 	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
 	$c = connect_to_database();
 	$id = $_GET['id'];
-	$user_id = $_GET['user_id'];
+	$admin_id = $_GET['admin_id'];
 	$result = mysqli_query($c, "SELECT * FROM contracts WHERE id = '$id'");
 	if (!$result) {
 		echo 'Could not find contract by the id specified.'; exit;
@@ -44,8 +44,8 @@
 			<div class="row form-group">
 			  <div class="col-md-4 col-xs-4">
 				<label>User Id</label>
-				<input class="form-control" type="text" name="user_id" <?php if($user_id <> "") { echo 'value="'.$user_id.'"'; } else { echo 'value="'.$u["user_id"].'"'; } ?> required>
-				<span class="help-block">The user id of the client this contract is for. Look in the <b>Clients tab</b> for user ids or to enter in a new client.</span>
+				<input class="form-control" type="text" name="admin_id" <?php if($admin_id <> "") { echo 'value="'.$admin_id.'"'; } else { echo 'value="'.$u["admin_id"].'"'; } ?> required>
+				<span class="help-block">The admin id of the client this contract is for. Look in the <b>Clients tab</b> for admin ids or to enter in a new client.</span>
 			  </div>
 			</div>
 			<div class="row form-group">

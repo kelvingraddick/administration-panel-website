@@ -1,5 +1,5 @@
 <?php
-	$site_name = "Site Name";
+	$site_name = "DOCme";
 
 	$database_host = "localhost";
 	$database_username = "username";

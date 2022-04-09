@@ -12,7 +12,7 @@
 
     $response = array();
 
-	if (mysqli_query($database_connection, "DELETE FROM admins WHERE id = '$id'")) {
+	if (mysqli_query($database_connection, "DELETE FROM patients WHERE id = '$id'")) {
 		$response['success'] = true;
 	} else {
 		$response['success'] = false;

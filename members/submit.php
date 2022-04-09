@@ -19,14 +19,14 @@
     $response = array();
 
 	if ($id == "") {
-		if (mysqli_query($database_connection, "INSERT INTO users (type, first_name, last_name, email_address, phone_number, password, notes) values(1, '$first_name', '$last_name', '$email_address', '$phone_number', 'wavelink', '$notes')")) {
+		if (mysqli_query($database_connection, "INSERT INTO admins (type, first_name, last_name, email_address, phone_number, password, notes) values(1, '$first_name', '$last_name', '$email_address', '$phone_number', 'wavelink', '$notes')")) {
 			$response['success'] = true;
 		} else {
             $response['success'] = false;
             $response['error_message'] = "There was an error saving: ".mysqli_error($database_connection);
 		}
 	} else {
-		if (mysqli_query($database_connection, "UPDATE users SET type = '$type', first_name = '$first_name', last_name = '$last_name', email_address = '$email_address', phone_number = '$phone_number', password = 'wavelink', notes = '$notes' where id = '$id'")){ 
+		if (mysqli_query($database_connection, "UPDATE admins SET type = '$type', first_name = '$first_name', last_name = '$last_name', email_address = '$email_address', phone_number = '$phone_number', password = 'wavelink', notes = '$notes' where id = '$id'")){ 
 			$response['success'] = true;
 		} else {
             $response['success'] = false;
