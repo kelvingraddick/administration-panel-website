@@ -11,7 +11,7 @@
     $template['page_name'] = "Blog Posts";
     $template['page_path'] = "blog_posts";
     $template['database_connection'] = connect_to_database();
-    $template['database_table'] = "blog_posts";
+    $template['database_table'] = "(SELECT * FROM blog_posts ORDER BY created_time DESC) AS blog_posts";
     $template['search'] = $_GET['search'];
     $template['fields'] = array();
     add_table_template_field($template['fields'], 'Id', 'id');
