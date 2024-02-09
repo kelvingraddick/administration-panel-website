@@ -26,9 +26,9 @@
     add_form_template_field($template['fields'], 'Longitude', 'longitude', $FIELD_TYPES['NUMBER'], true);
     add_form_template_field($template['fields'], 'Logo', 'logo_url', $FIELD_TYPES['IMAGE'], true);
     add_form_template_field($template['fields'], 'Banner Image', 'banner_image_url', $FIELD_TYPES['IMAGE'], false);
-    add_form_template_field($template['fields'], 'Website', 'website_url', $FIELD_TYPES['TEXT'], true);
-    add_form_template_field($template['fields'], 'Instagram Handle', 'instagram_handle', $FIELD_TYPES['TEXT'], false);
-    add_form_template_field($template['fields'], 'Facebook Handle', 'facebook_handle', $FIELD_TYPES['TEXT'], false);
+    add_form_template_field($template['fields'], 'Website URL', 'website_url', $FIELD_TYPES['TEXT'], true);
+    add_form_template_field($template['fields'], 'Instagram URL', 'instagram_url', $FIELD_TYPES['TEXT'], false);
+    add_form_template_field($template['fields'], 'Facebook URL', 'facebook_url', $FIELD_TYPES['TEXT'], false);
     add_form_template_field($template['fields'], 'Handclaps', 'handclaps', $FIELD_TYPES['NUMBER'], true);
     add_form_template_field($template['fields'], 'Is Enabled (0 = no; 1 = yes)', 'is_enabled', $FIELD_TYPES['NUMBER'], false);
 
